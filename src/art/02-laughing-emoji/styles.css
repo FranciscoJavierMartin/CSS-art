@@ -1,0 +1,102 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffdf40;
+}
+
+.container {
+  width: 31.25em;
+  height: 31.25em;
+  background-color: white;
+  border-radius: 1em;
+  position: relative;
+
+  /* Light white shade */
+  &::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 1em 0 0 1em;
+  }
+}
+
+.emoji {
+  height: 18.75em;
+  width: 18.75em;
+  background-color: #ffbe40;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Eyes */
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    height: 1.87em;
+    width: 3.12em;
+    border-radius: 5em 5em 0 0;
+    border: 1.12em solid #663733;
+    border-bottom: 0;
+    box-sizing: content-box;
+    top: 5em;
+  }
+
+  &::before {
+    left: 3.12em;
+  }
+
+  &::after {
+    right: 3.12em;
+  }
+}
+
+/* Mouth's semi circle structure */
+.mouth {
+  position: absolute;
+  background-color: #663733;
+  height: 6.25em;
+  width: 12.5em;
+  border-radius: 0 0 6.25em 6.25em;
+  top: 10.62em;
+  left: 0;
+  right: 0;
+  margin: auto;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+  }
+
+  /* Teeth */
+  &::before {
+    background-color: #ffedb3;
+    height: 1.87em;
+    width: 100%;
+  }
+
+  /* Tongue */
+  &::after {
+    background-color: #e63a17;
+    height: 3.75em;
+    width: 100%;
+    top: 3.12em;
+    border-radius: 50% 50% 0 0;
+  }
+}
