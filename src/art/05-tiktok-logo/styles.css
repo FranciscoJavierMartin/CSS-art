@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  --main-color: white;
+  --left-shadow: #24f6f0;
+  --right-shadow: #fe2d52;
+
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tiktok {
+  width: 37px;
+  height: 218px;
+  background-color: var(--main-color);
+  z-index: 1;
+  filter: drop-shadow(-10px -10px 0 var(--left-shadow));
+  box-shadow: 11.6px 10px 0 var(--right-shadow);
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border: 30px solid var(--main-color);
+    border-radius: 50%;
+    border-right: 30px solid transparent;
+    border-top: 30px solid transparent;
+    border-left: 30px solid transparent;
+    transform: rotate(45deg);
+    top: -100px;
+    right: -172px;
+    filter: drop-shadow(14px 0 0 var(--right-shadow));
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 37px solid var(--main-color);
+    border-radius: 50%;
+    top: 123px;
+    left: -137px;
+    filter: drop-shadow(16px 0 0 var(--right-shadow));
+    border-top: 37px solid transparent;
+    rotate: 45deg;
+  }
+}
