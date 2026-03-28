@@ -1,0 +1,54 @@
+*,
+*::before,
+*::after {
+  --blue: #34588e;
+  --red: #da473c;
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--blue);
+}
+
+/* Blue circle with white border */
+.pepsi {
+  background-color: var(--blue);
+  height: 300px;
+  aspect-ratio: 1;
+  border: 10px solid white;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+
+  /* Red circle within logo */
+  &::after {
+    content: '';
+    position: absolute;
+    height: 500px;
+    width: 550px;
+    background-color: var(--red);
+    border-radius: 50%;
+    top: -275px;
+    left: -300px;
+  }
+
+  /* White curved part in the logo */
+  &::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 400px;
+      background-color: white;
+      border-radius: 25%;
+      transform: rotate(-15deg);
+      top: -170px;
+      left: -240px;
+  }
+}
