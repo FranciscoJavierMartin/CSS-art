@@ -1,0 +1,66 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 97dvh;
+  background-color: lightblue;
+}
+
+/* Outward white circle */
+.container {
+  --green: #3ac371;
+
+  width: 400px;
+  height: 400px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.3);
+  position: relative;
+
+  /* Triangles */
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 63%;
+    transform: rotate(-40deg) rotateX(-50deg);
+    border: var(--triangle-size) solid var(--triangle-color);
+    border-top: var(--triangle-size) solid transparent;
+    border-bottom: var(--triangle-size) solid transparent;
+    border-left: var(--triangle-size) solid transparent;
+  }
+
+  /* White triangle */
+  &::before {
+    --triangle-size: 105px;
+    --triangle-color: white;
+    left: -27.5%;
+  }
+
+  /* Green triangle */
+  &::after {
+    --triangle-size: 80px;
+    --triangle-color: var(--green);
+    left: -13%;
+  }
+}
+
+/* Inner green circle */
+.inner {
+  width: 350px;
+  height: 350px;
+  background-color: var(--green);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+.fa-phone {
+  font-size: 200px;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  color: white;
+}

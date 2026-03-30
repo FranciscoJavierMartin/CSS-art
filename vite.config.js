@@ -12,6 +12,7 @@ export default defineConfig({
         "bahamas-flag": "./src/art/04-bahamas-flag/index.html",
         "tiktok-logo": "./src/art/05-tiktok-logo/index.html",
         "duck-art": "./src/art/06-duck-art/index.html",
+        "whatsapp-logo": "./src/art/07-whatapp-logo/index.html",
       },
     },
   },
