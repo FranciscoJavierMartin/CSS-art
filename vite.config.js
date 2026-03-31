@@ -13,6 +13,7 @@ export default defineConfig({
         "tiktok-logo": "./src/art/05-tiktok-logo/index.html",
         "duck-art": "./src/art/06-duck-art/index.html",
         "whatsapp-logo": "./src/art/07-whatapp-logo/index.html",
+        bulb: "./src/art/08-bulb/index.html",
       },
     },
   },

@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  --bulb-size: 250px;
+  --light-on: #ff8e00;
+}
+
+/* Round bulb */
+input[type='checkbox'],
+input[type='checkbox']::before,
+input[type='checkbox']::after {
+  --purple: #b4b9f1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: 0.3s;
+
+  &:checked {
+    background-color: #ffd845;
+
+    &::before {
+      background-color: var(--light-on);
+    }
+
+    &::after {
+      border: 25px solid var(--light-on);
+    }
+  }
+}
+
+input[type='checkbox'] {
+  height: var(--bulb-size);
+  width: var(--bulb-size);
+  background-color: #d0d5f4;
+  appearance: none; /* Hide checkbox */
+  border-radius: 50%;
+  cursor: pointer;
+  top: -110px;
+  bottom: 0;
+
+  /* Rod filament inside the bulb */
+  &::before {
+    content: '';
+    height: 100px;
+    width: 25px;
+    background-color: var(--purple);
+    bottom: 0;
+  }
+
+  /* Ring on the filament inside the bulb */
+  &::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border: 25px solid var(--purple);
+    border-radius: 50%;
+    bottom: 80px;
+  }
+}
+
+label,
+label::before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+label {
+  --dark-green: #05303d;
+
+  height: 110px;
+  width: 110px;
+  background-image: linear-gradient(#08475e 50%, var(--dark-green) 50%);
+  bottom: 150px;
+  /* FIXME: Fix position */
+  border-radius: 0 0 20px 20px;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: var(--dark-green);
+    bottom: -20px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    height: calc(2 * var(--bulb-size));
+    width: var(--bulb-size);
+    background-color: rgba(255, 255, 255, 0.3);
+    bottom: -50px;
+    left: 55px;
+  }
+}
