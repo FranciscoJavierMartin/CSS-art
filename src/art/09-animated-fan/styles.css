@@ -1,0 +1,124 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fan {
+  --crimson: #7e003f;
+  --pink: #df2c67;
+
+  height: 350px;
+  width: 350px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+/* Container holding the blades */
+label {
+  height: 20px;
+  width: 20px;
+  background-color: black;
+  position: absolute;
+  margin: 120px auto 0 auto;
+  left: 0;
+  right: 0;
+  animation: spin 1s linear infinite;
+  animation-play-state: paused;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background-color: white;
+    border-radius: 50%;
+    border: 10px solid var(--crimson);
+    left: -25px;
+    bottom: -25px;
+  }
+
+  /* Blades */
+  span {
+    height: 120px;
+    width: 70px;
+    background-color: var(--pink);
+    position: absolute;
+    border-radius: 55% 45% 100% 0/ 39% 28% 72% 61%;
+
+    &:first-child {
+      bottom: 10px;
+      left: 10px;
+    }
+
+    &:nth-child(2) {
+      left: -95px;
+      top: -50px;
+      transform: rotate(-120deg);
+    }
+
+    &:last-child {
+      right: -60px;
+      top: 10px;
+      transform: rotate(-240deg);
+    }
+  }
+}
+
+/* Stick */
+.base {
+  height: 160px;
+  width: 20px;
+  background-color: var(--crimson);
+  position: absolute;
+  top: 140px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: -1;
+
+  /* Base of the fan */
+  &::after {
+    content: "";
+    position: absolute;
+    height: 35px;
+    width: 150px;
+    background-color: var(--pink);
+    top: 160px;
+    left: -65px;
+    border-radius: 20px 20px 0 0;
+  }
+}
+
+/* Fan switch */
+input[type="checkbox"] {
+  height: 12px;
+  width: 20px;
+  background-color: var(--crimson);
+  appearance: none;
+  position: absolute;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+  bottom: 50px;
+  left: 130px;
+
+  &:checked {
+    height: 8px;
+
+    & + label {
+      animation-play-state: running;
+    }
+  }
+}
+
+@keyframes spin {
+  100% {
+    rotate: 360deg;
+  }
+}
