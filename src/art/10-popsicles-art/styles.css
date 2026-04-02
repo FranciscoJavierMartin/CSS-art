@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8db94;
+}
+
+.container {
+  height: 600px;
+  width: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.popsicle {
+  width: 180px;
+  height: 300px;
+  background-color: white;
+  border-radius: 90px 90px 20px 20px;
+  position: relative;
+  top: 45px;
+
+  /* The glow of the popsicles */
+  &::before {
+    content: "";
+    position: absolute;
+    height: 180px;
+    width: 15px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    right: 20px;
+    top: 60px;
+  }
+
+  /* Stick */
+  &::after {
+    position: absolute;
+    content: "";
+    height: 180px;
+    width: 30px;
+    background-color: #dba55b;
+    border-radius: 0 0 20px 20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 300px;
+  }
+}
+
+.popsicle-1 {
+  background-image: radial-gradient(
+    circle at 30px 53px,
+    #521a01 80px,
+    #f360ce 81px
+  );
+  background-size: 60px 300px;
+  background-repeat: repeat; /* Default value for this property */
+}
+
+.popsicle-2 {
+  background-color: #f77e05;
+  background-image: radial-gradient(#efbe8c 4px, transparent 4px);
+  background-size: 30px 30px;
+  background-repeat: repeat;
+}
+
+.popsicle-3 {
+  background-image: repeating-linear-gradient(
+    135deg,
+    #eda406 0 20px,
+    #ffbc05 20px 40px
+  );
+}
