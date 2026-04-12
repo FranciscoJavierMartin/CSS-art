@@ -16,6 +16,7 @@ export default defineConfig({
         bulb: "./src/art/08-bulb/index.html",
         "animated-fan": "./src/art/09-animated-fan/index.html",
         "popsicles-art": "./src/art/10-popsicles-art/index.html",
+        "gmail-logo": "./src/art/11-gmail-logo/index.html",
       },
     },
   },
