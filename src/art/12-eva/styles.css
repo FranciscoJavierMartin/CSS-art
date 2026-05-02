@@ -1,0 +1,64 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5844d3;
+}
+
+.container {
+  width: 300px;
+  height: 700px;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.head {
+  background-color: white;
+  width: 300px;
+  height: 250px;
+  border-radius: 48% 50% 49% 47%/ 61% 61% 37% 38%;
+}
+
+.eyes {
+  width: 240px;
+  height: 150px;
+  background-color: black;
+  border-radius: 48% 50% 49% 47%/ 61% 61% 37% 38%;
+  position: relative;
+  top: 25%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  &::before,
+  &::after {
+    content: "";
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: #35a2dd;
+    border-radius: 5% 100%;
+    rotate: 135deg;
+  }
+
+  &::before {
+    left: 10%;
+  }
+
+  &::after {
+    right: 10%;
+  }
+}
